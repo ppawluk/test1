@@ -16,16 +16,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Install Swift
+    - name: Run Swift in Docker
       run: |
-        sudo apt update
-        sudo apt install -y clang libicu-dev libcurl4-openssl-dev libpython3 libncurses5-dev
-        curl -O https://swift.org/builds/swift-5.8-release/ubuntu2004/swift-5.8-RELEASE/swift-5.8-RELEASE-ubuntu20.04.tar.gz
-        tar xzf swift-5.8-RELEASE-ubuntu20.04.tar.gz
-        sudo mv swift-5.8-RELEASE-ubuntu20.04 /usr/local/swift
-        echo 'export PATH=/usr/local/swift/usr/bin:$PATH' >> ~/.bashrc
-        source ~/.bashrc
-        swift --version
-
-    - name: Run tests
-      run: swift test
+        docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace swift:5.8 swift test
