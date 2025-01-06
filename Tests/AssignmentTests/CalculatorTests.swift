@@ -3,8 +3,8 @@ import XCTest
 
 final class CalculatorTests: XCTestCase {
     func testAdd() {
-        XCTAssertEqual(add(2, 3), 5)
-        XCTAssertEqual(add(-1, -1), -2)
-        XCTAssertEqual(add(0, 0), 0)
+        XCTAssertEqual(Assignment.add(2, 3), 5)
+        XCTAssertEqual(Assignment.add(-1, -1), -2)
+        XCTAssertEqual(Assignment.add(0, 0), 0)
     }
 }
