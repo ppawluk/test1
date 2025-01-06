@@ -2,22 +2,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "test1",
+    name: "Assignment",
     platforms: [
         .macOS(.v12)
     ],
     products: [
         .library(
-            name: "test1",
-            targets: ["test1"]),
+            name: "Assignment",
+            targets: ["Calculator"]),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "test1",
+            name: "Assignment",
             dependencies: []),
         .testTarget(
-            name: "Tests/AssignmentTests",
-            dependencies: ["MyProject"]),
+            name: "AssignmentTests",
+            dependencies: ["Assignment"]),
     ]
 )
