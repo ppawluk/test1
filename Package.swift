@@ -17,7 +17,7 @@ let package = Package(
             name: "test1",
             dependencies: []),
         .testTarget(
-            name: "MyProjectTests",
+            name: "Tests/AssignmentTests",
             dependencies: ["MyProject"]),
     ]
 )
